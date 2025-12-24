@@ -1,60 +1,58 @@
-'use client';
+"use client";
+import { DEFAULT_TABS } from "@/data/data";
+import { sectionHeaderProps } from "@/types/type";
 import Image from "next/image";
-
-type Tab = { key: string; label: string };
-
-type Props = {
-  title: string;
-  activeKey: string;
-  onChange?: (key: string) => void;
-  tabs?: Tab[];
-  rightIconSrc?: string;
-  rightIconAlt?: string;
-};
-
-const defaultTabs: Tab[] = [
-  { key: "day", label: "Day" },
-  { key: "week", label: "Week" },
-  { key: "month", label: "Month" },
-];
 
 export default function SectionHeader({
   title,
   activeKey,
   onChange,
-  tabs = defaultTabs,
+  tabs = DEFAULT_TABS,
   rightIconSrc = "/calender.svg",
   rightIconAlt = "calendar",
-}: Props) {
+}: sectionHeaderProps) {
   return (
-    <div className="flex items-center justify-between">
-      <p className="text-[18px] font-semibold text-[#1C1D21]">{title}</p>
+    <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      {/* Title */}
+      <p className="min-w-0 truncate text-[16px] sm:text-[18px] font-semibold text-[#1C1D21]">
+        {title}
+      </p>
 
-      <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2 text-[14px]">
-          {tabs.map((t) => {
-            const isActive = t.key === activeKey;
+      {/* Right controls */}
+      <div className="flex min-w-0 items-center gap-3">
+        {/* Tabs: scroll on small screens */}
+        <div className="min-w-0 flex-1 overflow-x-auto">
+          <div className="flex w-max items-center gap-2 text-[13px] sm:text-[14px] pr-2">
+            {tabs.map((t) => {
+              const isActive = t.key === activeKey;
 
-            return (
-              <button
-                key={t.key}
-                type="button"
-                onClick={() => onChange?.(t.key)}
-                aria-pressed={isActive}
-                className={[
-                  "h-10 px-5 rounded-xl font-semibold transition",
-                  isActive
-                    ? "border border-[#E5E7F2] bg-white text-[#1C1D21]"
-                    : "text-[#A0A3BD] hover:text-[#1C1D21]",
-                ].join(" ")}
-              >
-                {t.label}
-              </button>
-            );
-          })}
+              return (
+                <button
+                  key={t.key}
+                  type="button"
+                  onClick={() => onChange?.(t.key)}
+                  aria-pressed={isActive}
+                  className={[
+                    "shrink-0 rounded-xl font-semibold transition whitespace-nowrap",
+                    "h-9 px-4 sm:h-10 sm:px-5",
+                    isActive
+                      ? "border border-[#E5E7F2] bg-white text-[#1C1D21]"
+                      : "text-[#A0A3BD] hover:text-[#1C1D21]",
+                  ].join(" ")}
+                >
+                  {t.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        <div className="h-9 w-9 rounded-sm bg-[#F0F0F3] grid place-items-center">
+        {/* Right icon */}
+        <button
+          type="button"
+          className="shrink-0 grid h-9 w-9 sm:h-10 sm:w-10 place-items-center rounded-sm bg-[#F0F0F3] hover:bg-[#E0E2EB] transition"
+          aria-label={rightIconAlt}
+        >
           <Image
             src={rightIconSrc}
             alt={rightIconAlt}
@@ -62,7 +60,7 @@ export default function SectionHeader({
             height={20}
             className="h-4 w-4"
           />
-        </div>
+        </button>
       </div>
     </div>
   );

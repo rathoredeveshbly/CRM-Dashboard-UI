@@ -1,9 +1,6 @@
 import DashboardShell from "@/components/layout/DashboardShell";
 import WelcomePanel from "@/components/layout/WelcomePanel";
 import KpiRow from "@/components/cards/KpiRow";
-import OrdersChartCard from "@/components/charts/OrdersChartCard";
-import PlannedIncomeCard from "@/components/charts/PlannedIncomeCard";
-import LatestSalesTable from "@/components/tables/LatestSalesTable";
 import OrdersTableCard from "@/components/tables/OrdersTableCard";
 import InvoicesTableCard from "@/components/tables/InvoicesTableCard";
 

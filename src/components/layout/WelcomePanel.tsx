@@ -8,7 +8,7 @@ export default function WelcomePanel({
   mode: "dashboard-2" | "dashboard-3";
 }) {
   return (
-    <div className="pt-2">
+    <div className="flex h-full flex-col pt-2">
       {/* Big C card */}
       <div className="h-24 w-24 rounded-[28px] bg-[#5E81F4] grid place-items-center">
         <span className="text-white text-[56px] font-semibold leading-none">C</span>
@@ -22,8 +22,7 @@ export default function WelcomePanel({
         </p>
       </div>
 
-      {/* List content */}
-      <div className="mt-10">
+      <div className="mt-10 min-h-0 flex-1">
         <ActivityList mode={mode} />
       </div>
     </div>

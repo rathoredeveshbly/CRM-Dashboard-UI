@@ -28,10 +28,10 @@ Make sure you have the following installed:
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone git@github.com:rathoredeveshbly/CRM-Dashboard-UI.git
 
 # Navigate to project directory
-cd <project-folder>
+cd CRM-Dashboard-UI
 
 # Install dependencies
 npm install

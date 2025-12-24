@@ -6,7 +6,7 @@ export default function Topbar() {
       {/* Left */}
       <div className="flex items-center gap-4">
         <button
-          className="h-8 w-8 rounded-sm bg-[#f0f0f3] grid place-items-center text-slate-400"
+          className="h-8 w-8 rounded-sm bg-[#f0f0f3] grid place-items-center text-slate-400 cursor-pointer hover:bg-[#e0e2eb] transition"
           aria-label="Open menu"
         >
           <Menu className="h-[14px] w-[14px]" />
@@ -17,13 +17,13 @@ export default function Topbar() {
       {/* Right */}
       <div className="flex items-center gap-3">
         <button
-          className="h-8 w-8 rounded-sm bg-[#f0f0f3] grid place-items-center text-slate-400"
+          className="h-8 w-8 rounded-sm bg-[#f0f0f3] grid place-items-center text-slate-400 cursor-pointer hover:bg-[#e0e2eb] transition"
           aria-label="Search"
         >
           <Search className="h-[14px] w-[14px]" />
         </button>
         <button
-          className="h-8 w-8 rounded-sm bg-[#f0f0f3] grid place-items-center text-slate-400"
+          className="h-8 w-8 rounded-sm bg-[#f0f0f3] grid place-items-center text-slate-400 cursor-pointer hover:bg-[#e0e2eb] transition"
           aria-label="Add"
         >
           <CirclePlus className="h-[14px] w-[14px]" />

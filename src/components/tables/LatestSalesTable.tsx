@@ -20,16 +20,16 @@ export default function LatestSalesTable() {
 
       {/* Make ONLY table scrollable if needed */}
       <div className="mt-4 w-full min-w-0 overflow-x-auto">
-        <table className="w-[980px] lg:w-full text-sm">
+        <table className="min-w-[900px] w-full text-sm">
           {/* Table Head */}
           <thead className="bg-[#F6F7FB]">
             <tr className="text-[14px] font-semibold text-[#7A7AA7]">
               <th className="px-6 py-4">Product</th>
-              <th className="px-6 py-4">Customer</th>
-              <th className="px-6 py-4">Delivery</th>
-              <th className="px-6 py-4 text-right">Shipping</th>
-              <th className="px-6 py-4 text-right">Total</th>
-              <th className="px-6 py-4 text-right">Status</th>
+              <th className="px-3 py-1">Customer</th>
+              <th className="px-3 py-1">Delivery</th>
+              <th className="px-2 py-1 text-right">Shipping</th>
+              <th className="px-2 py-1 text-right">Total</th>
+              <th className="px-2 py-1 text-right">Status</th>
             </tr>
           </thead>
           {/* Rows */}
@@ -51,13 +51,13 @@ export default function LatestSalesTable() {
                 </td>
 
                 {/* Customer */}
-                <td className="px-6 py-4">
+                <td className="px-3 py-1">
                   <div className="text-[16px] font-semibold text-[#1C1D21]">{s.customer}</div>
                   <div className="mt-1 text-[14px] text-[#A0A3BD]">{s.email}</div>
                 </td>
 
                 {/* Delivery */}
-                <td className="px-6 py-4">
+                <td className="px-3 py-1">
                   <div className="text-[16px] font-semibold text-[#1C1D21]">{s.country}</div>
                   <div className="mt-1 text-[14px] text-[#A0A3BD] max-w-[360px] truncate">
                     {s.address}
@@ -65,17 +65,17 @@ export default function LatestSalesTable() {
                 </td>
 
                 {/* Shipping */}
-                <td className="px-6 py-4 text-right text-[16px] font-semibold text-[#1C1D21]">
+                <td className="px-2 py-1 text-right text-[16px] font-semibold text-[#1C1D21]">
                   {s.shipping}
                 </td>
 
                 {/* Total */}
-                <td className="px-6 py-4 text-right text-[16px] font-semibold text-[#1C1D21]">
+                <td className="px-2 py-1 text-right text-[16px] font-semibold text-[#1C1D21]">
                   {s.total}
                 </td>
 
                 {/* Status */}
-                <td className="px-6 py-4 text-right">
+                <td className="px-2 py-1 text-right">
                   <span className={statusBadge(s.status)}>{s.status}</span>
                 </td>
               </tr>

@@ -23,26 +23,26 @@ export type EventItem = {
 export type DotColor = "blue" | "amber" | "green";
 
 export type Sale = {
-    product: string;
-    productId: string;
-    productImg: string; // keep as svg/png from /public
-    customer: string;
-    email: string;
-    country: string;
-    address: string;
-    shipping: string;
-    total: string;
-    status: "Shipped" | "Processing";
-  };
+  product: string;
+  productId: string;
+  productImg: string;
+  customer: string;
+  email: string;
+  country: string;
+  address: string;
+  shipping: string;
+  total: string;
+  status: "Shipped" | "Processing";
+};
 
- export type Invoice = {
-    id: string;
-    title: string;
-    company: string;
-    amount: string;
-      icon: string;
-    status: "Paid" | "Pending" | "Processing";
-  };
+export type Invoice = {
+  id: string;
+  title: string;
+  company: string;
+  amount: string;
+  icon: string;
+  status: "Paid" | "Pending" | "Processing";
+};
 
 export type Order = {
   id: string;
@@ -51,4 +51,15 @@ export type Order = {
   price: string;
   status: "Shipped" | "Processing" | "Cancelled";
   img: string;
+};
+
+export type Tab = { key: string; label: string };
+
+export type sectionHeaderProps = {
+  title: string;
+  activeKey: string;
+  onChange?: (key: string) => void;
+  tabs?: Tab[];
+  rightIconSrc?: string;
+  rightIconAlt?: string;
 };

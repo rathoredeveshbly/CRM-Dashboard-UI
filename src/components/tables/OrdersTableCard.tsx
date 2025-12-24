@@ -46,7 +46,7 @@ export default function OrdersTableCard() {
 
         {/* footer */}
         <div className="flex items-center gap-4 py-5">
-          <button className="h-12 px-8 rounded-xl bg-[#5E81F4] text-white font-semibold text-[14px]">
+          <button className="h-12 px-8 rounded-xl bg-[#5E81F4] text-white font-semibold text-[14px] cursor-pointer hover:bg-[#4B6FDB] transition">
             All Orders
           </button>
           <p className="text-[13px] text-[#6B6F91]">

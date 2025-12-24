@@ -1,5 +1,6 @@
 import { BARS, DASHBOARD_2_EVENTS, DASHBOARD_3_EVENTS, DASHBOARD_3_UPDATES } from "@/data/data";
 import { DotColor, EventItem } from "@/types/type";
+import { MoreHorizontal } from "lucide-react";
 import Image from "next/image";
 
 
@@ -14,7 +15,6 @@ function Dashboard3Left() {
     <div className="space-y-10">
       <div>
         <SectionTitle>Latest updates</SectionTitle>
-
         <div className="mt-4 space-y-4">
           {DASHBOARD_3_UPDATES.map((u) => (
             <UpdateRow
@@ -34,10 +34,8 @@ function Dashboard3Left() {
           ))}
         </div>
       </div>
-
       <div>
         <SectionTitle>Upcoming events</SectionTitle>
-
         <div className="mt-4 space-y-4">
           {DASHBOARD_3_EVENTS.map((e) => (
             <EventRow key={e.id} {...e} />
@@ -52,7 +50,8 @@ function Dashboard3Left() {
 
 function Dashboard2Left() {
   return (
-    <div className="space-y-10">
+    <div className="flex h-full flex-col min-h-0">
+      {/* Top section */}
       <div>
         <SectionTitle>Upcoming events</SectionTitle>
 
@@ -63,10 +62,13 @@ function Dashboard2Left() {
         </div>
       </div>
 
-      <ConversionHistory />
+      <div className="mt-auto pt-6">
+        <ConversionHistory />
+      </div>
     </div>
   );
 }
+
 
 /* ---------------- Reusable Parts ---------------- */
 
@@ -78,9 +80,8 @@ function ConversionHistory() {
           <p className="text-[18px] font-semibold text-[#1C1D21]">Conversion history</p>
           <p className="mt-2 text-[14px] text-[#A0A3BD]">Week to week performance</p>
         </div>
-
         <button
-          className="shrink-0 grid h-12 w-12 place-items-center rounded-2xl bg-[#F0F0F3]"
+          className="shrink-0 grid h-12 w-12 place-items-center rounded-2xl bg-[#F0F0F3] cursor-pointer hover:bg-[#E0E2EB] transition"
           aria-label="Open chart"
           type="button"
         >
@@ -88,8 +89,8 @@ function ConversionHistory() {
         </button>
       </div>
 
-      {/* ✅ WHITE chart container */}
-      <div className="mt-6 rounded-2xl px-8 py-8">
+      {/* WHITE chart container */}
+      <div className="mt-6 rounded-2xl">
         <div className="flex h-[120px] items-end justify-between">
           {BARS.map((b) => (
             <div key={b.id} className="flex items-end gap-[8px]">
@@ -102,9 +103,6 @@ function ConversionHistory() {
     </div>
   );
 }
-
-
-
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return <p className="text-[13px] font-semibold text-[#1C1D21]">{children}</p>;
@@ -133,8 +131,6 @@ function UpdateRow({
   );
 }
 
-import { MoreHorizontal } from "lucide-react";
-
 function EventRow({ time, title, desc, dot }: EventItem & { dot: DotColor }) {
   const dotClass =
     dot === "blue" ? "bg-[#5E81F4]" : dot === "amber" ? "bg-[#FFB020]" : "bg-[#28C76F]";
@@ -150,11 +146,11 @@ function EventRow({ time, title, desc, dot }: EventItem & { dot: DotColor }) {
           <span className={`text-[12px] font-semibold ${timeColor}`}>{time}</span>
         </div>
 
-        {/* ✅ three dots */}
+        {/* three dots */}
         <button
           type="button"
           aria-label="More"
-          className="grid h-8 w-8 place-items-center rounded-xl text-[#A0A3BD] hover:bg-white/60"
+          className="grid h-8 w-8 place-items-center rounded-xl text-[#A0A3BD] hover:bg-white/60 cursor-pointer hover:bg-[#E0E2EB] transition"
         >
           <MoreHorizontal className="h-4 w-4" />
         </button>

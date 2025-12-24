@@ -1,4 +1,4 @@
-import { EventItem, Invoice, NavItem, Order, Sale, UpdateItem } from "@/types/type";
+import { EventItem, Invoice, NavItem, Order, Sale, Tab, UpdateItem } from "@/types/type";
 
 export const NAVBAR_ITEMS: NavItem[] = [
   { key: "timer", src: "/timer.svg", alt: "timer", active: true },
@@ -35,55 +35,55 @@ export const DASHBOARD_2_EVENTS: EventItem[] = [
   { id: "e3", time: "07:58PM", title: "Financial data overview", desc: "What Makes Flyers Unrivaled", dot: "green" },
 ];
 
- export const BARS = [
-    { id: "b1", blue: 44, green: 30 },
-    { id: "b2", blue: 78, green: 24 },
-    { id: "b3", blue: 60, green: 38 },
-    { id: "b4", blue: 86, green: 32 },
-    { id: "b5", blue: 64, green: 44 },
-    { id: "b6", blue: 92, green: 36 },
-    { id: "b7", blue: 56, green: 30 },
-    { id: "b8", blue: 70, green: 34 },
-  ];
-  
-  export const SALES: Sale[] = [
-    {
-      product: "Macbook Pro",
-      productId: "ID 10-3290-08",
-      productImg: "/dashboard3Icons/mac1.svg",
-      customer: "Rodney Cannon",
-      email: "rodney.cannon@gmail.com",
-      country: "United Kingdom",
-      address: "193 Cole Plains Suite 649, 891203",
-      shipping: "$18.00",
-      total: "$118.00",
-      status: "Shipped",
-    },
-    {
-      product: "Dell Laptop",
-      productId: "ID 10-3456-18",
-      productImg: "/dashboard3Icons/mac2.svg",
-      customer: "Mike Franklin",
-      email: "mike.franklin@gmail.com",
-      country: "United States",
-      address: "619 Jeffrey Freeway Apt. 273",
-      shipping: "$28.00",
-      total: "$208.00",
-      status: "Processing",
-    },
-    {
-      product: "Macbook Air",
-      productId: "ID 10-3786-23",
-      productImg: "/dashboard3Icons/mac3.svg",
-      customer: "Louis Franklin",
-      email: "louis.franklin@gmail.com",
-      country: "Germany",
-      address: "200 Davis Estates Suite 621",
-      shipping: "$18.00",
-      total: "$118.00",
-      status: "Processing",
-    },
-  ];
+export const BARS = [
+  { id: "b1", blue: 44, green: 30 },
+  { id: "b2", blue: 78, green: 24 },
+  { id: "b3", blue: 60, green: 38 },
+  { id: "b4", blue: 86, green: 32 },
+  { id: "b5", blue: 64, green: 44 },
+  { id: "b6", blue: 92, green: 36 },
+  { id: "b7", blue: 56, green: 30 },
+  { id: "b8", blue: 70, green: 34 },
+];
+
+export const SALES: Sale[] = [
+  {
+    product: "Macbook Pro",
+    productId: "ID 10-3290-08",
+    productImg: "/dashboard3Icons/mac1.svg",
+    customer: "Rodney Cannon",
+    email: "rodney.cannon@gmail.com",
+    country: "United Kingdom",
+    address: "193 Cole Plains Suite 649, 891203",
+    shipping: "$18.00",
+    total: "$118.00",
+    status: "Shipped",
+  },
+  {
+    product: "Dell Laptop",
+    productId: "ID 10-3456-18",
+    productImg: "/dashboard3Icons/mac2.svg",
+    customer: "Mike Franklin",
+    email: "mike.franklin@gmail.com",
+    country: "United States",
+    address: "619 Jeffrey Freeway Apt. 273",
+    shipping: "$28.00",
+    total: "$208.00",
+    status: "Processing",
+  },
+  {
+    product: "Macbook Air",
+    productId: "ID 10-3786-23",
+    productImg: "/dashboard3Icons/mac3.svg",
+    customer: "Louis Franklin",
+    email: "louis.franklin@gmail.com",
+    country: "Germany",
+    address: "200 Davis Estates Suite 621",
+    shipping: "$18.00",
+    total: "$118.00",
+    status: "Processing",
+  },
+];
 
 export const INVOICES_DATA: Invoice[] = [
   { id: "AA-04-19-1890677", title: "Website Development", icon: "/invoice.svg", company: "New Madieton LLC.", amount: "$1,250.00", status: "Paid" },
@@ -166,4 +166,10 @@ export const MONTHS_DATA = [
   { m: "Oct", a: 26, b: 22 },
   { m: "Nov", a: 40, b: 30 },
   { m: "Dec", a: 32, b: 36 },
+];
+
+export const DEFAULT_TABS: Tab[] = [
+  { key: "day", label: "Day" },
+  { key: "week", label: "Week" },
+  { key: "month", label: "Month" },
 ];

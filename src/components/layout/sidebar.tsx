@@ -10,7 +10,7 @@ export default function Sidebar() {
       </div>
 
       {/* Nav */}
-      <nav className="mt-6 flex flex-col items-center gap-3">
+      <nav className="mt-8 flex flex-1 flex-col items-center gap-4 pb-10 overflow-y-autoscrollbar-none">
         {NAVBAR_ITEMS.map((item) => (
           <button
             key={item.key}
@@ -23,7 +23,7 @@ export default function Sidebar() {
           >
             <Image src={item.src} alt={item.alt} width={20} height={20} className="h-5 w-5" />
 
-            {/* Active vertical indicator line on RIGHT (color #5E81F4) */}
+            {/* Active vertical indicator line on RIGHT */}
             {item.active && (
               <span
                 className="absolute right-[-10px] top-1/2 h-10 w-[3px] -translate-y-1/2 rounded-full"
@@ -32,7 +32,6 @@ export default function Sidebar() {
             )}
           </button>
         ))}
-
       </nav>
 
       {/* Bottom profile */}
