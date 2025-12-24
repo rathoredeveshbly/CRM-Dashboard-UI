@@ -1,36 +1,142 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📊 CRM Dashboard UI (Next.js + Tailwind)
 
-## Getting Started
+A modern **CRM Dashboard UI** built using **Next.js (App Router)** and **Tailwind CSS**, inspired by real-world SaaS dashboard designs.  
+The project supports **multiple dashboard layouts** (`dashboard-2`, `dashboard-3`) with a shared, scalable architecture.
 
-First, run the development server:
+---
+
+## 🚀 Tech Stack
+
+- Next.js 14+ (App Router)
+- React 18
+- TypeScript
+- Tailwind CSS
+- Next/Image (optimized images)
+
+---
+
+## 📦 Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js **v18 or above**
+- npm / yarn / pnpm
+
+---
+
+## ⚙️ Project Setup & Installation
 
 ```bash
+# Clone the repository
+git clone <your-repo-url>
+
+# Navigate to project directory
+cd <project-folder>
+
+# Install dependencies
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+---
+Open the app in your browser:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Home (Dashboard Selector)
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Dashboard 2
+http://localhost:3000/dashboard/dashboard-2
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Dashboard 3
+http://localhost:3000/dashboard/dashboard-3
+---
+app/
+ ├─ page.tsx                     # Home page (dashboard links)
+ ├─ dashboard/
+ │   ├─ dashboard-2/page.tsx     # Dashboard variant 2
+ │   └─ dashboard-3/page.tsx     # Dashboard variant 3
+ │
+components/
+ ├─ layout/
+ │   ├─ DashboardLayout.tsx      # Sidebar + Topbar layout
+ │   ├─ DashboardShell.tsx       # Left panel + main content wrapper
+ │   ├─ Sidebar.tsx
+ │   └─ Topbar.tsx
+ │
+ ├─ cards/                       # KPI & stat cards
+ ├─ charts/                      # Orders / income charts
+ ├─ tables/                      # Sales & invoice tables
+ ├─ lists/                       # Activity & events lists
+ │
+data/
+ └─ data.ts                      # Mocked dashboard data
+---
+## 🧠 Architectural Decisions
+-App Router & Layouts
 
-## Learn More
+Used Next.js App Router for clean routing and layout composition
 
-To learn more about Next.js, take a look at the following resources:
+Sidebar and Topbar are handled at layout level for consistency
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-DashboardShell Pattern
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Introduced DashboardShell to support flexible left panels
 
-## Deploy on Vercel
+Same layout works for both dashboard variants without duplication
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-Component Reusability
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Reusable components like:
+
+KpiRow
+
+SectionHeader
+
+Tables and chart cards
+
+Reduces repetition and improves maintainability
+
+-Client vs Server Components
+
+Server Components by default for performance
+
+Client Components only where interactivity is required (tabs, buttons)
+
+-Styling
+
+Tailwind CSS utility-first approach
+
+No global CSS overrides
+
+Design closely follows the Figma-style layout
+---
+## ⚖️ Assumptions & Trade-offs
+Assumptions
+
+UI-focused project (no backend integration yet)
+
+Data is static / mocked
+
+Desktop-first layout
+
+Trade-offs
+
+No authentication or API layer
+
+Charts are static
+
+Minimal state management to keep complexity low
+---
+## 🚧 Possible Improvements
+
+API integration
+
+Authentication & role-based access
+
+Responsive mobile layout
+
+Dark mode
+
+Real-time charts
+
+Unit & integration tests
