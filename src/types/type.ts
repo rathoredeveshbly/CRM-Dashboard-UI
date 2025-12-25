@@ -33,6 +33,7 @@ export type Sale = {
   shipping: string;
   total: string;
   status: "Shipped" | "Processing";
+  createdAt: string;
 };
 
 export type Invoice = {
@@ -42,6 +43,7 @@ export type Invoice = {
   amount: string;
   icon: string;
   status: "Paid" | "Pending" | "Processing";
+  createdAt: string;
 };
 
 export type Order = {
@@ -51,6 +53,7 @@ export type Order = {
   price: string;
   status: "Shipped" | "Processing" | "Cancelled";
   img: string;
+  createdAt: string;
 };
 
 export type Tab = { key: string; label: string };
@@ -62,4 +65,5 @@ export type sectionHeaderProps = {
   tabs?: Tab[];
   rightIconSrc?: string;
   rightIconAlt?: string;
+  onRightIconClick?: () => void;
 };

@@ -46,7 +46,7 @@ export const BARS = [
   { id: "b8", blue: 70, green: 34 },
 ];
 
-export const SALES: Sale[] = [
+export const SALES_DATA: Sale[] = [
   {
     product: "Macbook Pro",
     productId: "ID 10-3290-08",
@@ -58,6 +58,7 @@ export const SALES: Sale[] = [
     shipping: "$18.00",
     total: "$118.00",
     status: "Shipped",
+    createdAt: "2025-12-25",
   },
   {
     product: "Dell Laptop",
@@ -70,6 +71,7 @@ export const SALES: Sale[] = [
     shipping: "$28.00",
     total: "$208.00",
     status: "Processing",
+    createdAt: "2025-12-23",
   },
   {
     product: "Macbook Air",
@@ -82,18 +84,95 @@ export const SALES: Sale[] = [
     shipping: "$18.00",
     total: "$118.00",
     status: "Processing",
+    createdAt: "2025-12-10",
   },
 ];
 
+
 export const INVOICES_DATA: Invoice[] = [
-  { id: "AA-04-19-1890677", title: "Website Development", icon: "/invoice.svg", company: "New Madieton LLC.", amount: "$1,250.00", status: "Paid" },
-  { id: "AA-04-19-1890678", title: "UI/UX Design", icon: "/invoice.svg", company: "TechVerse Pvt Ltd", amount: "$980.00", status: "Pending" },
-  { id: "AA-04-19-1890679", title: "API Integration", icon: "/invoice.svg", company: "CloudNova Inc.", amount: "$1,500.00", status: "Processing" },
-  { id: "AA-04-19-1890680", title: "Mobile App Development", icon: "/invoice.svg", company: "PixelCraft Studio", amount: "$2,300.00", status: "Paid" },
-  { id: "AA-04-19-1890681", title: "Maintenance & Support", icon: "/invoice.svg", company: "BluePeak Solutions", amount: "$450.00", status: "Pending" },
-  { id: "AA-04-19-1890682", title: "Cloud Hosting", icon: "/invoice.svg", company: "InfraWorks Ltd.", amount: "$720.00", status: "Paid" },
-  { id: "AA-04-19-1890683", title: "Performance Optimization", icon: "/invoice.svg", company: "NextGen Systems", amount: "$860.00", status: "Processing" },
+  {
+    id: "AA-04-19-1890677",
+    title: "Website Development",
+    icon: "/invoice.svg",
+    company: "New Madieton LLC.",
+    amount: "$1,250.00",
+    status: "Paid",
+    createdAt: "2025-12-25",
+  },
+  {
+    id: "AA-04-19-1890678",
+    title: "UI/UX Design",
+    icon: "/invoice.svg",
+    company: "TechVerse Pvt Ltd",
+    amount: "$980.00",
+    status: "Pending",
+    createdAt: "2025-12-24",
+  },
+  {
+    id: "AA-04-19-1890679",
+    title: "API Integration",
+    icon: "/invoice.svg",
+    company: "CloudNova Inc.",
+    amount: "$1,500.00",
+    status: "Processing",
+    createdAt: "2025-12-21",
+  },
+  {
+    id: "AA-04-19-1890680",
+    title: "Mobile App Development",
+    icon: "/invoice.svg",
+    company: "PixelCraft Studio",
+    amount: "$2,300.00",
+    status: "Paid",
+    createdAt: "2025-12-15",
+  },
+  {
+    id: "AA-04-19-1890681",
+    title: "Maintenance & Support",
+    icon: "/invoice.svg",
+    company: "BluePeak Solutions",
+    amount: "$450.00",
+    status: "Pending",
+    createdAt: "2025-12-08",
+  },
+  {
+    id: "AA-04-19-1890682",
+    title: "Cloud Hosting",
+    icon: "/invoice.svg",
+    company: "InfraWorks Ltd.",
+    amount: "$720.00",
+    status: "Paid",
+    createdAt: "2025-11-28",
+  },
+  {
+    id: "AA-04-19-1890683",
+    title: "Performance Optimization",
+    icon: "/invoice.svg",
+    company: "NextGen Systems",
+    amount: "$860.00",
+    status: "Processing",
+    createdAt: "2025-11-10",
+  },
+   {
+    id: "AA-04-19-1890683",
+    title: "Performance Optimization",
+    icon: "/invoice.svg",
+    company: "NextGen Systems",
+    amount: "$860.00",
+    status: "Processing",
+    createdAt: "2025-10-10",
+  },
+   {
+    id: "AA-04-19-1890683",
+    title: "Performance Optimization",
+    icon: "/invoice.svg",
+    company: "NextGen Systems",
+    amount: "$860.00",
+    status: "Processing",
+    createdAt: "2025-10-10",
+  },
 ];
+
 
 export const ORDERS_DATA: Order[] = [
   {
@@ -103,6 +182,7 @@ export const ORDERS_DATA: Order[] = [
     price: "$118.00",
     status: "Shipped",
     img: "/dashboard3Icons/mac1.svg",
+    createdAt: "2025-12-25",
   },
   {
     id: "10-3291-12",
@@ -111,14 +191,16 @@ export const ORDERS_DATA: Order[] = [
     price: "$999.00",
     status: "Processing",
     img: "/dashboard3Icons/mac2.svg",
+    createdAt: "2025-12-23",
   },
   {
     id: "10-3292-19",
     product: "Apple Watch Series 7, 45mm",
-    address: "1293 Leannon Street, NY",
+    address: "1293 Leannon Street, New York",
     price: "$399.00",
     status: "Processing",
     img: "/dashboard3Icons/mac3.svg",
+    createdAt: "2025-12-22",
   },
   {
     id: "10-3293-23",
@@ -127,6 +209,7 @@ export const ORDERS_DATA: Order[] = [
     price: "$799.00",
     status: "Shipped",
     img: "/dashboard3Icons/mac1.svg",
+    createdAt: "2025-12-20",
   },
   {
     id: "10-3294-31",
@@ -135,6 +218,7 @@ export const ORDERS_DATA: Order[] = [
     price: "$249.00",
     status: "Cancelled",
     img: "/dashboard3Icons/mac2.svg",
+    createdAt: "2025-12-18",
   },
   {
     id: "10-3295-44",
@@ -143,6 +227,7 @@ export const ORDERS_DATA: Order[] = [
     price: "$699.00",
     status: "Cancelled",
     img: "/dashboard3Icons/mac3.svg",
+    createdAt: "2025-12-15",
   },
   {
     id: "10-3296-58",
@@ -151,21 +236,23 @@ export const ORDERS_DATA: Order[] = [
     price: "$179.00",
     status: "Cancelled",
     img: "/dashboard3Icons/mac1.svg",
+    createdAt: "2025-12-12",
   },
 ];
 
 export const MONTHS_DATA = [
-  { m: "Jan", a: 28, b: 22 },
-  { m: "Feb", a: 24, b: 18 },
-  { m: "Mar", a: 18, b: 14 },
-  { m: "Apr", a: 42, b: 36 },
-  { m: "Jun", a: 54, b: 20 },
-  { m: "Jul", a: 46, b: 18 },
-  { m: "Aug", a: 30, b: 26 },
-  { m: "Sep", a: 18, b: 30 },
-  { m: "Oct", a: 26, b: 22 },
-  { m: "Nov", a: 40, b: 30 },
-  { m: "Dec", a: 32, b: 36 },
+  { m: "Jan", a: 28, b: 22, createdAt: "2025-01-15" },
+  { m: "Feb", a: 24, b: 18, createdAt: "2025-02-15" },
+  { m: "Mar", a: 18, b: 14, createdAt: "2025-03-15" },
+  { m: "Apr", a: 42, b: 36, createdAt: "2025-04-15" },
+  { m: "May", a: 38, b: 30, createdAt: "2025-05-15" },
+  { m: "Jun", a: 54, b: 20, createdAt: "2025-06-15" },
+  { m: "Jul", a: 46, b: 18, createdAt: "2025-07-15" },
+  { m: "Aug", a: 30, b: 26, createdAt: "2025-08-15" },
+  { m: "Sep", a: 18, b: 30, createdAt: "2025-09-15" },
+  { m: "Oct", a: 26, b: 22, createdAt: "2025-10-15" },
+  { m: "Nov", a: 40, b: 30, createdAt: "2025-11-15" },
+  { m: "Dec", a: 32, b: 36, createdAt: "2025-12-15" },
 ];
 
 export const DEFAULT_TABS: Tab[] = [
