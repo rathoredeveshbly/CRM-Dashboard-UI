@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Sidebar() {
   return (
-    <aside className="w-16 bg-white border-r flex flex-col items-center py-4">
+    <aside className="w-16 bg-white border-r border-gray-300 flex flex-col items-center py-4">
       {/* Top logo */}
       <div className="h-10 w-10 mt-4 rounded-2xl bg-blue-600/10 grid place-items-center">
         <Image src="/logo.svg" alt="logo" width={18} height={18} className="h-[18px] w-[18px]" />

@@ -6,8 +6,7 @@ type KpiItem =
       type: "statSpark";
       value: string;
       label: string;
-      sparkSrc: string;
-      dot?: "blue" | "green" | "red";
+      dot?: "blue" | "grey" | "red";
     }
   | {
       type: "kpi";

@@ -12,22 +12,19 @@ export default function Dashboard2() {
           type: "statSpark",
           value: "$1.870",
           label: "Income per lead",
-          sparkSrc: "/sparks/spark-blue.svg",
           dot: "blue",
         },
         {
           type: "statSpark",
           value: "2.890",
           label: "New leads",
-          sparkSrc: "/sparks/spark-blue2.svg",
-          dot: "blue",
+          dot: "grey",
         },
         {
           type: "statSpark",
           value: "15.10%",
           label: "Conversion rate",
-          sparkSrc: "/sparks/spark-blue3.svg",
-          dot: "blue",
+          dot: "red",
         },
       ]}
       />
