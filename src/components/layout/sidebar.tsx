@@ -1,7 +1,14 @@
+"use client";
+
+import { useState } from "react";
 import { NAVBAR_ITEMS } from "@/data/data";
 import Image from "next/image";
 
 export default function Sidebar() {
+  // default active: first active item from data, else first item
+  const initialKey = NAVBAR_ITEMS.find((i) => i.active)?.key ?? NAVBAR_ITEMS[0]?.key;
+
+  const [activeKey, setActiveKey] = useState<string>(initialKey);
   return (
     <aside className="w-16 bg-white border-r border-gray-300 flex flex-col items-center py-4">
       {/* Top logo */}
@@ -10,28 +17,37 @@ export default function Sidebar() {
       </div>
 
       {/* Nav */}
-      <nav className="mt-8 flex flex-1 flex-col items-center gap-4 pb-10 overflow-y-autoscrollbar-none">
-        {NAVBAR_ITEMS.map((item) => (
+      <nav
+        className="mt-8 flex flex-1 flex-col items-center gap-4 pb-10 overflow-y-auto scrollbar-none"
+        aria-label="Primary"
+      >
+        {NAVBAR_ITEMS.map((item) => {
+          const isActive = activeKey === item.key;
+        return (
           <button
             key={item.key}
+            type="button"
+            onClick={() => setActiveKey(item.key)}
+            aria-label={item.alt}
+            aria-current={isActive ? "page" : undefined}
             className={[
               "relative h-11 w-11 rounded-xl grid place-items-center transition",
-              item.active ? "bg-slate-100" : "hover:bg-slate-50",
+              isActive ? "bg-slate-100" : "hover:bg-slate-50",
               "focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60",
             ].join(" ")}
-            aria-label={item.alt}
           >
             <Image src={item.src} alt={item.alt} width={20} height={20} className="h-5 w-5" />
 
             {/* Active vertical indicator line on RIGHT */}
-            {item.active && (
+            {isActive && (
               <span
                 className="absolute right-[-10px] top-1/2 h-10 w-[3px] -translate-y-1/2 rounded-full"
                 style={{ backgroundColor: "#5E81F4" }}
               />
             )}
           </button>
-        ))}
+        );
+      })}
       </nav>
 
       {/* Bottom profile */}

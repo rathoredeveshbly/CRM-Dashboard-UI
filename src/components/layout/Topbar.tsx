@@ -1,13 +1,15 @@
 import { Menu, Search, CirclePlus } from "lucide-react";
 
-export default function Topbar() {
+export default function Topbar({ onMenuClick }: { onMenuClick?: () => void }) {
   return (
     <header className="h-14 bg-slate-50 flex items-center justify-between">
       {/* Left */}
       <div className="flex items-center gap-4">
         <button
+          type="button"
+          onClick={onMenuClick}
           className="h-8 w-8 rounded-sm bg-[#f0f0f3] grid place-items-center text-slate-400 cursor-pointer hover:bg-[#e0e2eb] transition"
-          aria-label="Open menu"
+          aria-label="Toggle sidebar"
         >
           <Menu className="h-[14px] w-[14px]" />
         </button>

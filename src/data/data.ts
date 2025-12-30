@@ -84,7 +84,7 @@ export const SALES_DATA: Sale[] = [
     shipping: "$18.00",
     total: "$118.00",
     status: "Processing",
-    createdAt: "2025-12-10",
+    createdAt: "2026-01-02",
   },
 ];
 
@@ -133,7 +133,7 @@ export const INVOICES_DATA: Invoice[] = [
     company: "BluePeak Solutions",
     amount: "$450.00",
     status: "Pending",
-    createdAt: "2025-12-08",
+    createdAt: "2026-01-01",
   },
   {
     id: "AA-04-19-1890682",
@@ -151,26 +151,8 @@ export const INVOICES_DATA: Invoice[] = [
     company: "NextGen Systems",
     amount: "$860.00",
     status: "Processing",
-    createdAt: "2025-11-10",
-  },
-   {
-    id: "AA-04-19-1890683",
-    title: "Performance Optimization",
-    icon: "/invoice.svg",
-    company: "NextGen Systems",
-    amount: "$860.00",
-    status: "Processing",
-    createdAt: "2025-10-10",
-  },
-   {
-    id: "AA-04-19-1890683",
-    title: "Performance Optimization",
-    icon: "/invoice.svg",
-    company: "NextGen Systems",
-    amount: "$860.00",
-    status: "Processing",
-    createdAt: "2025-10-10",
-  },
+    createdAt: "2026-01-02",
+  }
 ];
 
 
@@ -227,7 +209,7 @@ export const ORDERS_DATA: Order[] = [
     price: "$699.00",
     status: "Cancelled",
     img: "/dashboard3Icons/mac3.svg",
-    createdAt: "2025-12-15",
+    createdAt: "2026-01-01",
   },
   {
     id: "10-3296-58",
@@ -236,7 +218,7 @@ export const ORDERS_DATA: Order[] = [
     price: "$179.00",
     status: "Cancelled",
     img: "/dashboard3Icons/mac1.svg",
-    createdAt: "2025-12-12",
+    createdAt: "2026-01-02",
   },
 ];
 
