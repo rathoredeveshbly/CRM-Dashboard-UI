@@ -18,7 +18,7 @@ export default function Sidebar() {
 
       {/* Nav */}
       <nav
-        className="mt-8 flex flex-1 flex-col items-center gap-4 pb-10 overflow-y-auto scrollbar-none"
+        className="mt-8 w-full flex flex-1 flex-col items-center gap-4 pb-10 overflow-y-auto pr-[10px] scrollbar-none"
         aria-label="Primary"
       >
         {NAVBAR_ITEMS.map((item) => {
@@ -40,11 +40,7 @@ export default function Sidebar() {
 
             {/* Active vertical indicator line on RIGHT */}
             {isActive && (
-              <span
-                className="absolute right-[-10px] top-1/2 h-10 w-[3px] -translate-y-1/2 rounded-full"
-                style={{ backgroundColor: "#5E81F4" }}
-              />
-            )}
+              <span className="absolute right-[-15px] top-1/2 h-10 w-[3px] -translate-y-1/2 rounded-full bg-[#5E81F4]" />)}
           </button>
         );
       })}
